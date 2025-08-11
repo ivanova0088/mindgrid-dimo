@@ -1,0 +1,59 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>MindGrid – شبكة العقول</title>
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0a7c66"/>
+  <style>
+    :root{--bg:#fff;--fg:#111;--tile:#f2f2f2;--tile-border:#d8d8d8}
+    @media (prefers-color-scheme: dark){
+      :root{--bg:#0c0f12;--fg:#e8e8e8;--tile:#161a1f;--tile-border:#2a3038}
+    }
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Naskh Arabic UI','Noto Sans Arabic',Tahoma,Arial,sans-serif;background:var(--bg);color:var(--fg)}
+    header{display:flex;gap:12px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--tile-border)}
+    header img{width:36px;height:36px;border-radius:8px}
+    h1{font-size:20px;margin:0}
+    .sub{opacity:.8;font-size:12px}
+    main{padding:18px;max-width:760px;margin:auto}
+    .card{border:1px solid var(--tile-border);background:var(--tile);border-radius:14px;padding:16px 16px 8px}
+    .grid{display:grid;grid-template-columns: repeat(7, 38px); gap:6px; justify-content:center; padding:12px}
+    .cell{width:38px;height:38px;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;border-radius:6px;border:1px solid var(--tile-border);font-weight:600}
+    @media (prefers-color-scheme: dark){ .cell{ background:#0e1318;color:#e8e8e8 } }
+    .black{background:#000;color:#000}
+    .actions{display:flex;gap:8px;justify-content:center;padding:8px 0 12px}
+    button{padding:10px 14px;border-radius:10px;border:1px solid var(--tile-border);background:var(--bg);color:var(--fg);font-weight:600}
+    footer{padding:20px;text-align:center;opacity:.65}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="./assets/icon-192.png" alt="MindGrid Logo"/>
+    <div>
+      <h1>MindGrid – شبكة العقول</h1>
+      <div class="sub">كلمات متقاطعة وألغاز يومية</div>
+    </div>
+  </header>
+  <main>
+    <div class="card">
+      <h2>لغز اليوم</h2>
+      <div class="grid">
+        <div class="cell">ب</div><div class="cell">غ</div><div class="cell">د</div><div class="cell">ا</div><div class="cell">د</div>
+        <div class="cell black"></div><div class="cell black"></div>
+        <div class="cell black"></div><div class="cell black"></div><div class="cell black"></div>
+        <div class="cell black"></div><div class="cell black"></div><div class="cell black"></div><div class="cell black"></div>
+      </div>
+      <div class="actions">
+        <button onclick="alert('إجابة صحيحة!')">تحقق</button>
+        <button onclick="alert('تلميح: تقع في العراق')">تلميح</button>
+      </div>
+    </div>
+  </main>
+  <footer>نسخة تجريبية – MindGrid</footer>
+  <script>
+    if('serviceWorker' in navigator){ navigator.serviceWorker.register('./sw.js'); }
+  </script>
+</body>
+</html>
